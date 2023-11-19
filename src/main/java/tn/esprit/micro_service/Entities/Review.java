@@ -19,8 +19,8 @@ public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idReview;
-    private User reviewer;
-    private Service service;
+    //private User reviewer;
+    //private Service service;
     private int rating;
     private String comment;
     @Temporal(TemporalType.DATE)

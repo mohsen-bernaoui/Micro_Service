@@ -17,6 +17,6 @@ public class Subscription {
     private TypeSubscription type_sub;
     @Temporal(TemporalType.DATE)
     private Date dateExp_sub;
-    @OneToOne(mappedBy = "subsription")
+    @OneToOne(mappedBy = "subscription")
     private User user;
 }

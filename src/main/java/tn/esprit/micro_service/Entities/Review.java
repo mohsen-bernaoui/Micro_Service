@@ -1,4 +1,4 @@
-package tn.esprit.micro_service.entities;
+package tn.esprit.micro_service.Entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,7 +13,7 @@ import java.util.Date;
 public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idReview;
     private User reviewer;
     private Service service;
     private int rating;

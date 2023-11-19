@@ -1,4 +1,4 @@
-package tn.esprit.micro_service.Controller;
+package tn.esprit.micro_service.Restcontroller;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;

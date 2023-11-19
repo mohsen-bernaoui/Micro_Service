@@ -1,15 +1,20 @@
 package tn.esprit.micro_service.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.apache.catalina.Service;
 import org.apache.catalina.User;
 
 import java.util.Date;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,5 +23,6 @@ public class Review {
     private Service service;
     private int rating;
     private String comment;
+    @Temporal(TemporalType.DATE)
     private Date reviewDate;
 }

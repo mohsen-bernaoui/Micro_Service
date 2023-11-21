@@ -27,7 +27,7 @@ private ReclamationServiceIMP reclamationServiceIMP;
     @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Reclamation> updateReclamation(@PathVariable Long id, @RequestBody Reclamation reclamation) {
-        return new ResponseEntity<>(reclamationServiceIMP.updateReclamation(reclamation), HttpStatus.OK);
+        return new ResponseEntity<>(reclamationServiceIMP.updateReclamation(id,reclamation), HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)

@@ -3,7 +3,7 @@ package tn.esprit.micro_service.Services;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.micro_service.Entities.Reclamation;
-import tn.esprit.micro_service.Entities.ServiceE;
+
 import tn.esprit.micro_service.Repository.ReclamationRepo;
 
 import java.util.List;

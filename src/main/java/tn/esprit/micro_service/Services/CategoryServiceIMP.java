@@ -6,6 +6,8 @@ import tn.esprit.micro_service.Entities.Category;
 import tn.esprit.micro_service.Repository.CategoryRepo;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 @AllArgsConstructor
 public class CategoryServiceIMP implements ICategory{
@@ -26,14 +28,28 @@ public class CategoryServiceIMP implements ICategory{
     }
     @Override
     public Category updateCategory(Long id_category, Category updatedCategory) {
-        Category existingCategory=getCategoryById(id_category);
+
+        Optional<Category> optionalCategory=categoryRepo.findById(id_category);
+
+        if(optionalCategory.isPresent()){
+            Category existingCategory=optionalCategory.get();
+
         if (updatedCategory.getCategoryName() != null) {
             existingCategory.setCategoryName(updatedCategory.getCategoryName());
         }
         if (updatedCategory.getDescription() != null) {
             existingCategory.setDescription(updatedCategory.getDescription());
         }
+        try{
         return categoryRepo.save(existingCategory);
+        } catch (Exception e){
+            throw new RuntimeException("Failed to update reclamation",e);
+        }
+        }
+        else{
+            return null;
+        }
+
     }
     @Override
     public void deleteCategory(Long id_category) {

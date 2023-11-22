@@ -8,19 +8,19 @@ import lombok.Setter;
 import org.apache.catalina.Service;
 import org.apache.catalina.User;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Review {
+public class Review implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idReview;
-    private User reviewer;
-    private Service service;
+    private long idReview;
+    //private User reviewer;
+    //private Service service;
     private int rating;
     private String comment;
     @Temporal(TemporalType.DATE)

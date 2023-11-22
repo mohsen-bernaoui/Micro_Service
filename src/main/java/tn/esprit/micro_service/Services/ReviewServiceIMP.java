@@ -1,5 +1,6 @@
 package tn.esprit.micro_service.Services;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.micro_service.Entities.Review;
 import tn.esprit.micro_service.Repository.ReviewRepo;
@@ -7,6 +8,7 @@ import tn.esprit.micro_service.Repository.ReviewRepo;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class ReviewServiceIMP implements IReview {
     private ReviewRepo reviewRepo;
     @Override
@@ -31,6 +33,7 @@ public class ReviewServiceIMP implements IReview {
 
     @Override
     public void deleteReview(Long idReview) {
+        reviewRepo.deleteById(idReview);
 
     }
 }

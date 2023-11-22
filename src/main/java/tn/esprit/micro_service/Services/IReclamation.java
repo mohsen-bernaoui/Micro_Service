@@ -9,7 +9,7 @@ public interface IReclamation {
     Reclamation createReclamation(Reclamation reclamation);
     Reclamation getReclamationById(Long idr);
     List<Reclamation> getAllReclamation();
-    public Reclamation updateReclamation(Reclamation reclamation);
+    public Reclamation updateReclamation(Long idR,Reclamation reclamation);
     public  void deleteReclamation(Long idr);
 
 }

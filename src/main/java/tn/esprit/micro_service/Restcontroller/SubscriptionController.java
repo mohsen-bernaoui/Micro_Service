@@ -19,7 +19,7 @@ import java.util.List;
 public class SubscriptionController {
     @Autowired
     public SubscriptionSeviceIMP subscriptionSeviceIMP;
-    @PostMapping(consumes = MediaType.APPLICATION_XML_VALUE)
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Subscription> addSubscription(@RequestBody Subscription sub){
         return new ResponseEntity<>(subscriptionSeviceIMP.addSubscription(sub),HttpStatus.OK);
@@ -38,8 +38,8 @@ public class SubscriptionController {
     public List<Subscription> getAllSubscription(){
         return subscriptionSeviceIMP.getAllSubscription();
     }
-    @GetMapping("/getSubscriptionById/{id_sub}")
-    public Subscription getSubscriptionById(Long id_sub){
+    @GetMapping("/getSubscriptionById/{id}")
+    public Subscription getSubscriptionById(@PathVariable(value = "id") long id_sub){
         return subscriptionSeviceIMP.getSubscriptionById(id_sub);
     }
 

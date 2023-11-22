@@ -21,8 +21,12 @@ public class SubscriptionSeviceIMP implements ISubscription{
 
         if (subscriptionRepo.findById(id_sub).isPresent()) {
             Subscription existingSub = subscriptionRepo.findById(id_sub).get();
-            existingSub.setType_sub(newSub.getType_sub());
-            existingSub.setDateExp_sub(newSub.getDateExp_sub());
+            if(newSub.getType_sub()!=null){
+                existingSub.setType_sub(newSub.getType_sub());
+            }
+            if(newSub.getDateExp_sub()!=null){
+                existingSub.setDateExp_sub(newSub.getDateExp_sub());
+            }
             return subscriptionRepo.save(existingSub);
         } else
             return null;

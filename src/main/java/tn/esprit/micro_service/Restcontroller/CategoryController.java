@@ -26,7 +26,7 @@ public class CategoryController {
     }
 
     @PutMapping("/deleteCategory/{id_category}")
-    public ResponseEntity<Category> deleteCategory(@PathVariable Long id_category, @RequestBody Category updatedCategory) {
+    public ResponseEntity<Category> updateCategory(@PathVariable Long id_category, @RequestBody Category updatedCategory) {
         Category updatedEntity = iCategory.updateCategory(id_category, updatedCategory);
         return new ResponseEntity<>(updatedEntity, HttpStatus.OK);
     }
